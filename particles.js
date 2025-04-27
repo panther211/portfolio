@@ -1,67 +1,95 @@
-/* Animation Delays */
-.fade-in:nth-child(1) {
-    animation-delay: 0.1s;
-}
+// This would typically be a particles.json configuration file
+// Here's a simplified version for the implementation
 
-.fade-in:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-.fade-in:nth-child(3) {
-    animation-delay: 0.5s;
-}
-
-.fade-in:nth-child(4) {
-    animation-delay: 0.7s;
-}
-
-.fade-in:nth-child(5) {
-    animation-delay: 0.9s;
-}
-
-.slide-in {
-    animation-delay: 0.5s;
-}
-
-/* Keyframe Animations */
-@keyframes float {
-    0% {
-        transform: translateY(0px);
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#2563eb"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 2,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#2563eb",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": true,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
     }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Element Animations */
-.image-wrapper {
-    animation: float 6s ease-in-out infinite;
-}
-
-.btn-primary {
-    animation: pulse 2s ease infinite;
-}
-
-/* Hover Animations */
-.project-card:hover {
-    animation: pulse 0.5s ease;
-}
-
-.tool-item:hover i {
-    animation: pulse 0.5s ease;
-}
+});
